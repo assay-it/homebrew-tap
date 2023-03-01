@@ -8,8 +8,7 @@ class AssayIt < Formula
   version "1.0.0"
   license "MIT"
 
-  depends_on "go" => :optional
-  depends_on "git"
+  depends_on "go"
 
   on_macos do
     if Hardware::CPU.arm?
