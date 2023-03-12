@@ -5,45 +5,45 @@
 class AssayIt < Formula
   desc "Confirm Quality and Eliminate Risk by Testing Microservices in Production."
   homepage "https://assay.it"
-  version "1.0.6"
+  version "1.1.0"
   license "MIT"
 
   depends_on "go"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/assay-it/assay-it/releases/download/v1.0.6/assay-it_Darwin_arm64.tar.gz"
-      sha256 "d4813bcefd56aa50f4d02c9c72704789a10cf2d5a6de3e989491498bf585b09f"
+      url "https://github.com/assay-it/assay-it/releases/download/v1.1.0/assay-it_1.1.0_darwin_arm64"
+      sha256 "ed56ed7c35f4f162faa3e74dd203443a6b8c2451cee568fbc71dd760e9a841d6"
 
       def install
-        bin.install "assay-it"
+        bin.install "assay-it_1.1.0_darwin_arm64" => "assay-it"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/assay-it/assay-it/releases/download/v1.0.6/assay-it_Darwin_x86_64.tar.gz"
-      sha256 "3cb0bdf0aa61c607c8b879a002ab352356369c38df36cc9afb6e969f2d1cf001"
+      url "https://github.com/assay-it/assay-it/releases/download/v1.1.0/assay-it_1.1.0_darwin_amd64"
+      sha256 "3b8ed53acc1b66dd66fbaf4c0543df12c946510436627154616a7545d61a5bf7"
 
       def install
-        bin.install "assay-it"
+        bin.install "assay-it_1.1.0_darwin_amd64" => "assay-it"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/assay-it/assay-it/releases/download/v1.0.6/assay-it_Linux_arm64.tar.gz"
-      sha256 "7f99a4f7f01e140f3eba1aa4ad01ebaa3dcb9aa36473071df61bfa67be6ff5e4"
+    if Hardware::CPU.intel?
+      url "https://github.com/assay-it/assay-it/releases/download/v1.1.0/assay-it_1.1.0_linux_amd64"
+      sha256 "cc6a089f13f054f4e8521abf18416869e1c5ae97f95f3fbd7ace9193239b3a01"
 
       def install
-        bin.install "assay-it"
+        bin.install "assay-it_1.1.0_linux_amd64" => "assay-it"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/assay-it/assay-it/releases/download/v1.0.6/assay-it_Linux_x86_64.tar.gz"
-      sha256 "321fa0b17e84def49e74bfe8737b607db7e3735d50a9b1a02bc154afda26ec8d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/assay-it/assay-it/releases/download/v1.1.0/assay-it_1.1.0_linux_arm64"
+      sha256 "6e67c0a1b02cb2aeb9e8f094c9da6e10118a364f13f7d512a64149bd48d6d5c6"
 
       def install
-        bin.install "assay-it"
+        bin.install "assay-it_1.1.0_linux_arm64" => "assay-it"
       end
     end
   end
